@@ -63,15 +63,14 @@ WORKDIR /app
 
 # Copy node_modules and Playwright browsers from deps stage
 COPY --from=deps /app/node_modules ./node_modules
-COPY --from=deps /ms-playwright /ms-playwright
+COPY --from=deps /root/.cache/ms-playwright /root/.cache/ms-playwright
 
 # Copy source code
 COPY . .
 
 # Create screenshots directory with proper permissions
 RUN mkdir -p screenshots && \
-    chown -R bun:bun /app && \
-    chown -R bun:bun /ms-playwright
+    chown -R bun:bun /app
 
 # Switch to non-root user
 USER bun
