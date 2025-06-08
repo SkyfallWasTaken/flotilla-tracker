@@ -62,7 +62,6 @@ ENV PLAYWRIGHT_BROWSERS_PATH=/ms-playwright
 WORKDIR /app
 
 # Copy node_modules and Playwright browsers from deps stage
-COPY --from=deps /app/node_modules ./node_modules
 COPY --from=deps /root/.cache/ms-playwright /root/.cache/ms-playwright
 
 # Copy source code
