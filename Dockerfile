@@ -1,5 +1,5 @@
 # Multi-stage build for better optimization
-FROM oven/bun:latest AS deps
+FROM oven/bun:latest
 
 # Install system dependencies required for Playwright
 RUN apt-get update && apt-get install -y \
@@ -26,9 +26,6 @@ RUN apt-get update && apt-get install -y \
     fonts-noto-cjk \
     # Clean up
     && rm -rf /var/lib/apt/lists/*
-
-# Use the Bun image as the base image
-FROM oven/bun:latest
 
 # Set the working directory in the container
 WORKDIR /app
