@@ -27,6 +27,8 @@ RUN apt-get update && apt-get install -y \
     # Clean up
     && rm -rf /var/lib/apt/lists/*
 
+RUN bunx playwright install
+
 # Set the working directory in the container
 WORKDIR /app
 
