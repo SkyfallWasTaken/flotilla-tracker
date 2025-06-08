@@ -259,7 +259,7 @@ function initializeCronJob(): void {
   console.log('Initializing cron job to run every 6 hours...');
   
   // Run every 6 hours: 0 */6 * * *
-  const job = Cron('0 */6 * * *', {
+  const job = new Cron('0 */6 * * *', {
     name: 'flotilla-screenshot',
     timezone: 'UTC'
   }, executeScreenshotProcess);
