@@ -35,7 +35,8 @@ WORKDIR /app
 # Copy the current directory contents into the container at /app
 COPY . .
 
-HEALTHCHECK --interval=5m --timeout=3s CMD exit 0
+HEALTHCHECK --interval=5m --timeout=3s \
+  CMD echo hi
 
 # Run the server when the container launches
 ENTRYPOINT ["bun", "run", "index.ts"]
