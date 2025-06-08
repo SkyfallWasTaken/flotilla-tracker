@@ -30,9 +30,6 @@ RUN apt-get update && apt-get install -y \
 # Create app directory
 WORKDIR /app
 
-# Install dependencies
-RUN bun install --frozen-lockfile
-
 # Install Playwright browsers
 RUN bunx playwright install chromium
 
