@@ -47,7 +47,6 @@ RUN apt-get update && apt-get install -y \
     ca-certificates \
     fonts-liberation \
     fonts-noto-cjk \
-    fonts-noto-emoji \
     libnss3 \
     libxss1 \
     libasound2 \
