@@ -32,9 +32,6 @@ RUN apt-get update && apt-get install -y \
 # Create app directory
 WORKDIR /app
 
-# Copy package files
-COPY package.json bun.lock* ./
-
 # Install dependencies
 RUN bun install --frozen-lockfile
 
@@ -66,16 +63,12 @@ RUN apt-get update && apt-get install -y \
 ENV PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1
 ENV PLAYWRIGHT_BROWSERS_PATH=/ms-playwright
 
-
 # Create app directory
 WORKDIR /app
 
 # Copy node_modules and Playwright browsers from deps stage
 COPY --from=deps /app/node_modules ./node_modules
 COPY --from=deps /ms-playwright /ms-playwright
-
-# Copy package files
-COPY package.json bun.lock* ./
 
 # Copy source code
 COPY . .
