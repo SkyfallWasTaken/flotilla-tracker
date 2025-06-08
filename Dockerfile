@@ -24,8 +24,6 @@ RUN apt-get update && apt-get install -y \
     # Fonts
     fonts-liberation \
     fonts-noto-cjk \
-    fonts-noto-emoji \
-    fonts-noto-color-emoji \
     # Clean up
     && rm -rf /var/lib/apt/lists/*
 
